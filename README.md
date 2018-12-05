@@ -1,3 +1,7 @@
+# Solenya Autocomplete
+
+A databound autocomplete input for solenya.
+
 # Installation
 
 Assuming you have `solenya` installed, you will need the following npm packages:

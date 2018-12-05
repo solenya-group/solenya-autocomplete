@@ -209,7 +209,10 @@ export class AutoComplete<T> extends Component implements AutoCompleteProps<T>
                 this.selections.map (sel =>
                     span (props.selectionAttrs, { class: "selection d-flex align-items-center" },
                         span ({ style: {whiteSpace: "nowrap" }}, sel),
-                        closeButton ({ onclick: () => this.removeSelection (sel) })
+                        closeButton ({
+                            onclick: () => this.removeSelection (sel),
+                            style: { fontSize: "140%", transform: "translateY(-2px)" }
+                        })
                     )
                 )            
         )

@@ -1,6 +1,6 @@
 import { HAttributes, DatabindProps } from 'solenya'
 
-interface IAutoCompleteProps<T>
+export interface IAutoCompleteProps<T>
 {
     /** Can be used to prefix the input id used by the autocomplete, which is based on the property name the autocomplete is bound to. */
     prefix: string 
