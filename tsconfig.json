@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom","scripthost", "es5", "es2015.promise"],
+    "declaration": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "noImplicitAny": true,
+    "strict": true,
+    "outDir": "./dist",
+    "suppressImplicitAnyIndexErrors":true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

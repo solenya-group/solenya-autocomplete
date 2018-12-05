@@ -1,0 +1,21 @@
+{
+  "name": "solenya-autocomplete",
+  "version": "1.2.6",
+  "author": "solenya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solenya-group/solenya-autocomplete"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {    
+    "lodash-decorators": "^6.0.0"
+  },
+  "peerDependencies": {
+    "solenya": "^1.2.6",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"    
+  }
+}

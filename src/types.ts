@@ -1,72 +1,5 @@
-# Installation
+import { HAttributes, DatabindProps } from 'solenya'
 
-Assuming you have `solenya` installed, you will need the following npm packages:
-
-```
-solenya-autocomplete
-bootstrap
-popper.js
-jquery
-```
-Currently `solenya-autocomplete` superficially depends on bootstrap & jquery for styling & menus. Those dependencies will be removed in the future.
-
-# Usage
-The usage of `AutoComplete` is as follows:
-
-```typescript
-export class AutoCompleteSample extends Component
-{
-    usStates: string[] = []
-
-    @transient usStateAutocomplete = 
-        new AutoComplete ({
-            target: this,
-            prop: () => this.usStates,
-            isMultiSelect: true,
-            modelToLabel: mapPropertyFromTo (usStates, c => c.code, c => c.label),
-            labelToModel: mapPropertyFromTo (usStates, c => c.label, c => c.code),
-            suggestor: async searchText => {
-                const reg = new RegExp (searchText, "i")
-                return usStates.filter (l => reg.test (l.label)).map(l => l.label)
-            }
-        })
-
-    view() {
-        return this.usStateAutocomplete.view ()                  
-    }
-}
-
-const usStates = [
-    { code: "AL", label: "Alabama" },
-    { code: "AK", label: "Alaska" },
-    { code: "AZ", label: "Arizona" },
-    ...
-}
-```
-
-Like all the built-in inputs, `AutoComplete` databinds to a property. The property type is of type `T|T[]`, where you use an array when `isMultiSelect` is true.
-
-`modelToLabel` and `labelToModel` allow you to translate between logical values and the values the user sees. In the above example, the logical values are the state codes, while the label values are the full names of the states.
-
-The `suggestor` is a promise that returns a list of suggestions given a `searchText`.
-
-# Styling
-
-You can customize the styling to the various composite elements of the autocomplete as follows:
-
-```typescript
- this.usStateAutocomplete.view ({         
-    selectionAttrs: {
-        style: {
-            backgroundColor: "#eee"                        
-        }
-    }
-})            
-```
-
-# Properties
-
-```typescript
 interface IAutoCompleteProps<T>
 {
     /** Can be used to prefix the input id used by the autocomplete, which is based on the property name the autocomplete is bound to. */
@@ -107,5 +40,15 @@ interface IAutoCompleteProps<T>
 
     /** A function that receives an event when the user's selection changes. */
     onSelectEvent?: (selection: string | string[]) => void    
-} 
-```
+}
+
+export type AutoCompleteProps<T> = Partial<IAutoCompleteProps<T>> & DatabindProps<T|T[]>
+
+export interface AutoCompleteViewProps {
+    attrs?: HAttributes,
+    inputAttrs?: HAttributes
+    inputFocusAttrs?: HAttributes,
+    selectionAttrs?: HAttributes,
+    suggestionsAttrs?: HAttributes,
+    suggestionAttrs?: HAttributes
+}

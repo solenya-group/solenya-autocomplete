@@ -1,0 +1,8 @@
+node_modules/
+.vscode/
+src/*.js
+src/*.map
+src/*.map
+src/*.d.ts
+package-lock.json
+dist
