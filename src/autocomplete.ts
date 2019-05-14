@@ -179,6 +179,7 @@ export class AutoComplete<T> extends Component implements AutoCompleteProps<T>
             this.update (() => {
                 this.attemptedAutoComplete = false
             })
+            this.onSelect()
             return
         }
         var suggestions = await this.suggestor (search!)

@@ -1,6 +1,6 @@
 {
   "name": "solenya-autocomplete",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "author": "solenya",
   "license": "MIT",
   "repository": {
@@ -13,7 +13,7 @@
     "lodash-decorators": "^6.0.0"
   },
   "peerDependencies": {
-    "solenya": "^1.2.6",
+    "solenya": "^1.2.8",
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"    
